@@ -30,6 +30,15 @@ export class RecipeDetailComponent implements OnInit {
       );
   }
 
+
+    onDelete() {
+        this.recipesService.deleteRecipe(this.selectedRecipe);
+        this.router.navigate(['/recipes']);
+    }
+    onEdit() {
+        this.router.navigate(['/recipes', this.recipeIndex, 'edit']);
+    }
+
   onAddToShoppingList() {
     this.sls.addItems(this.selectedRecipe.ingredients);
   }

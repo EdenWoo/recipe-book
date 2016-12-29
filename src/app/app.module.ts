@@ -1,3 +1,4 @@
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,11 +13,11 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.component';
 import { DropdownDirective } from './dropdown.directive';
-import { ShoppingListService } from "./shopping-list/shopping-list.service";
-import { RecipeService } from "./recipes/recipe.service";
-import {routing} from "./app.routing";
-import {RecipeStartComponent} from "./recipes/recipe-start.component";
-import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeService } from './recipes/recipe.service';
+import {routing} from './app.routing';
+import {RecipeStartComponent} from './recipes/recipe-start.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
     // RouterModule，
     routing
   ],
-  providers: [ShoppingListService,RecipeService],//provide same instance of service for the whole application.
+  providers: [ShoppingListService,RecipeService], // provide same instance of service for the whole application.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

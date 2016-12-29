@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Recipe } from "./recipe";
-import { Ingredient } from "../shared/ingredient";
+import { Recipe } from './recipe';
+import { Ingredient } from '../shared/ingredient';
 
 @Injectable()
 export class RecipeService {
@@ -24,7 +24,7 @@ export class RecipeService {
   }
 
   deleteRecipe(recipe: Recipe) {
-  this.recipes.splice(this.recipes.indexOf(recipe), 1)
+  this.recipes.splice(this.recipes.indexOf(recipe), 1);
 }
 
 }
