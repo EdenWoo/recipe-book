@@ -14,6 +14,7 @@ import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.comp
 import { DropdownDirective } from './dropdown.directive';
 import { ShoppingListService } from "./shopping-list/shopping-list.service";
 import { RecipeService } from "./recipes/recipe.service";
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { RecipeService } from "./recipes/recipe.service";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    // RouterModule，
+    routing
   ],
   providers: [ShoppingListService,RecipeService],//provide same instance of service for the whole application.
   bootstrap: [AppComponent]

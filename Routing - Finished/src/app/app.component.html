@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+            <h1>Hello World!</h1>
+            <hr>
+            <!-- [fragment] = "section1" ==> ?analytics=500#section1 指向页面的某个id-->
+            <a [routerLink]="['']" [queryParams]="{analytics: 500}" [fragment] = "section1">Home</a> |
+            <input type="text" #id (input)="0">
+            <a [routerLink]="['user', id.value]" routerLinkActive="active" [routerLinkActivateOptions]="{exact: true}" >User</a>
+            <hr>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
