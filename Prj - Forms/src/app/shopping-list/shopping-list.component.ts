@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingListService } from './shopping-list.service';
-import { Ingredient } from '../shared/ingredient';
+
+import { ShoppingListAddComponent } from "./shopping-list-add.component";
+import { Ingredient } from "../shared";
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
   selector: 'rb-shopping-list',
-  templateUrl: './shopping-list.component.html'
+  templateUrl: 'shopping-list.component.html'
 })
 export class ShoppingListComponent implements OnInit {
   items: Ingredient[] = [];
@@ -23,5 +25,4 @@ export class ShoppingListComponent implements OnInit {
   onCleared() {
     this.selectedItem = null;
   }
-
 }

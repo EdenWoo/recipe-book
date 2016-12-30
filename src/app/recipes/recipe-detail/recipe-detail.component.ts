@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Recipe} from '../recipe';
-import { ShoppingListService } from "../../shopping-list/shopping-list.service";
-import { Subscription } from "rxjs/Rx";
-import { ActivatedRoute, Router } from "@angular/router";
-import { RecipeService } from "../recipe.service";
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
+import { Subscription } from 'rxjs/Rx';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'rb-recipe-detail',
@@ -40,9 +40,11 @@ export class RecipeDetailComponent implements OnInit {
     }
 
   onAddToShoppingList() {
+      console.log(this.selectedRecipe.ingredients);
     this.sls.addItems(this.selectedRecipe.ingredients);
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
       this.subscription.unsubscribe();
   }
