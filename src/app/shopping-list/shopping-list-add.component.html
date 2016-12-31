@@ -1,3 +1,12 @@
+<!--First we have #f="ngForm". 
+The #v=thing syntax says that we want to create a local variable for this view.
+Here we're creating an alias to ngForm, for this view, bound to the variable #f. 
+Where did ngForm come from in the first place? It came from the NgForm directive.
+And what type of object is ngForm? It is a FormGroup. 
+That means we can use f as a FormGroup in our view. 
+And that's exactly what we do in the (ngSubmit) output.-->
+
+
 <div class="row">
   <div class="col-xs-12">
     <form id="shopping-list-add" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
