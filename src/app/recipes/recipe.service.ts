@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable'; // <- add this import
+
 import { Recipe } from './recipe';
 import { Ingredient } from '../shared/ingredient';
-// import { Observable } from 'rxjs/Observable'; // <- add this import
-import 'rxjs/Rx';
 // import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -41,13 +42,13 @@ export class RecipeService {
     this.recipes[this.recipes.indexOf(oldRecipe)] = newRecipe;
   }
 
-  // storeData() {
-  //   const body = JSON.stringify(this.recipes);
-  //   const headers = new Headers({
-  //     'Content-Type': 'application/json'
-  //   });
-  //   return this.http.put('https://recipebook-3bc83.firebaseio.com/recipes.json', body, { headers: headers });
-  // }
+  storeData() {
+    const body = JSON.stringify(this.recipes);
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post('https://recipebook-3bc83.firebaseio.com/recipes.json', body, { headers: headers });
+  }
 
   // fetchData() {
   //   return this.http.get('https://recipebook-3bc83.firebaseio.com/recipes.json')
