@@ -18,6 +18,7 @@ import { RecipeService } from './recipes/recipe.service';
 import {routing} from './app.routing';
 import {RecipeStartComponent} from './recipes/recipe-start.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DoublePipe } from './double.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ShoppingListAddComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    DoublePipe
   ],
   imports: [
     BrowserModule,
